@@ -3,13 +3,13 @@ img {
     transition: transform 0.3s ease;
 }
 
-/* 确保有链接的图片有 pointer 光标 */
-img[data-link] {
+/* 确保有图片链接的图片有 pointer 光标 */
+img[data-img-link] {
     cursor: pointer; /* 手指光标 */
 }
 
-/* 确保未被放大的、没有链接的图片有 zoom-in 光标 */
-img:not([data-link]):not(.expanded) {
+/* 确保未被放大的、没有图片链接的图片有 zoom-in 光标 */
+img:not([data-img-link]):not(.expanded) {
     cursor: zoom-in; /* 带加号的放大镜 */
 }
 
