@@ -1,0 +1,168 @@
+:root {
+    --sidebar-width: clamp(200px, 20vw, 365px);
+    --sidebar-padding: clamp(20px, 5vw, 40px) clamp(12px, 2vw, 30px) clamp(0px, 0vw, 0px) clamp(60px, 6vw, 130px);
+    --content-padding: clamp(20px, 5vw, 60px) clamp(20px, 10vw, 130px) clamp(20px, 5vw, 30px) clamp(20px, 10vw, 200px);
+    --font-family: 'PingFang SC', 'Nunito', sans-serif;
+    --font-color: #000;
+    --sidebar-bg: #fff;
+    --sidebar-color: #5F5F5F;
+    --hover-color: #CACACA;
+    --project-gap: 10px 10px;
+    --project-max-width: 306px;
+    --project-width: clamp(120px, 16vw, 306px);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #fff;
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 防止水平滚动 */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    padding: var(--sidebar-padding);
+    box-shadow: 0px 0 0px rgba(0, 0, 0, 0.1);
+    color: var(--sidebar-color);
+    box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
+}
+
+.sidebar h2 {
+    font-family: var(--font-family);
+    font-weight: 200; 
+    font-size: 22px;
+    margin-bottom: 40px;
+    letter-spacing: 1px; /* 增加字距 */
+    color: var(--font-color);
+}
+
+.sidebar h2 a {
+    text-decoration: none; /* 去除超链接的默认样式 */
+    font-size: 22px;
+    color: var(--font-color); /* 确保链接文字颜色与 h2 的颜色一致 */
+}
+
+.sidebar a {
+    display: block;
+    margin: 11.5px 0;
+    text-decoration: none;
+    font-family: var(--font-family);
+    letter-spacing: 1px; /* 增加字距 */
+    font-weight: 200; 
+    font-size: 16px;
+    color: var(--sidebar-color);
+}
+
+.sidebar a:hover {
+    color: var(--hover-color);
+}
+
+.sidebar a.active {
+    color: var(--hover-color); /* 修改为选中后的颜色 */
+}
+
+.content {
+    flex: 1;
+    padding: var(--content-padding); /* 修改这里以调整右边距 */
+    box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
+    overflow-y: auto; /* 如果内容过多，允许垂直滚动 */
+}
+
+.content .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 65px;
+}
+
+.content .title h1 {
+    font-family: var(--font-family);
+    font-weight: 300; /* Light */
+    font-size: 24px;
+    margin: 0;
+    color: var(--font-color);
+}
+
+.content .title a {
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 18px;
+    color: var(--sidebar-color);
+    text-decoration: none;
+}
+
+.content .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--project-width), 1fr)); /* 使用 auto-fill 和 minmax 动态适应列数 */
+    gap: var(--project-gap);
+    justify-content: center; /* 使项目居中对齐 */
+}
+
+.project {
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 100%;
+    max-width: var(--project-max-width); /* 设置最大宽度以确保自适应 */
+    box-sizing: border-box;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.project h3 {
+    font-family: var(--font-family);
+    font-weight: 700; /* Bold */
+    font-size: 12px;
+    text-align: left;
+    margin: 0 0 5px 0;
+    color: #9F9F9F;
+}
+
+.project p {
+    font-family: var(--font-family);
+    font-weight: 300; /* Light */
+    text-align: left;
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    color: #9F9F9F;
+}
+
+.project a {
+    font-family: var(--font-family);
+    font-weight: 400; /* Regular */
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    color: var(--font-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: row; /* 始终保持并排布局 */
+    }
+
+    .sidebar {
+        padding: 20px 10px;
+        width: var(--sidebar-width); /* 使用动态宽度 */
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
