@@ -3,19 +3,22 @@ img {
     transition: transform 0.3s ease;
 }
 
+/* 确保有链接的图片有 pointer 光标 */
 img[data-link] {
-    cursor: pointer;
+    cursor: pointer; /* 手指光标 */
 }
 
-img:not([data-link]) {
-    cursor: zoom-in;
+/* 确保未被放大的、没有链接的图片有 zoom-in 光标 */
+img:not([data-link]):not(.expanded) {
+    cursor: zoom-in; /* 带加号的放大镜 */
 }
 
+/* 确保放大的图片有 zoom-out 光标 */
 img.expanded {
     transform: scale(2); /* 可以根据需要调整放大倍数 */
     position: relative;
     z-index: 10;
-    cursor: zoom-out;
+    cursor: zoom-out; /* 带减号的放大镜 */
 }
 
 #overlay {

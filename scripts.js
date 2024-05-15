@@ -17,8 +17,9 @@ projects.forEach(project => {
     const projectElement = document.createElement('div');
     projectElement.classList.add('project');
 
+    const linkAttribute = project.link ? `data-link="${project.link}"` : '';
     projectElement.innerHTML = `
-        <img src="${project.img}" alt="${project.title}" data-link="${project.link || ''}">
+        <img src="${project.img}" alt="${project.title}" ${linkAttribute}>
         <h3><b>${project.title}</b></h3>
         <p>${project.description}</p>
         ${project.link ? `<a href="${project.link}" target="_blank">Github</a>` : ''}
