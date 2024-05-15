@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sidebarPlaceholder) {
         const sidebarContent = `
             <div class="sidebar">
-                <h2><a href="/index.html">Onovich</a></h2>
-                <a href="#" class="active">CODES</a>
+                <h2><a href="index.html">Onovich</a></h2>
+                <a href="codes.html" class="active">CODES</a>
                 <a href="#">GAMES</a>
                 <a href="#">PIXEL ARTS</a>
                 <a href="#">ILLUSTRATIONS</a>
