@@ -1,3 +1,4 @@
+/* styles.css */
 :root {
     --sidebar-width: clamp(200px, 20vw, 365px);
     --sidebar-padding: clamp(20px, 5vw, 40px) clamp(12px, 2vw, 30px) clamp(0px, 0vw, 0px) clamp(60px, 6vw, 130px);
