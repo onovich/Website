@@ -1,48 +1,44 @@
-const projects = [
-    { title: 'Ninja Ming', description: '开发中 (协助开发)', link: 'https://github.com/onovich/Swing', linkLabel: 'Github', img: 'images/codes/codecover_compass.png', imgLink: 'https://example.com/ninja' },
-    { title: 'Oshi', description: '2024 研发中', img: 'images/codes/codecover_compass.png' },
-    { title: 'Alter', description: '2024 研发中', img: 'images/codes/codecover_compass.png' },
-    { title: 'Leap', description: '2024 研发中', img: 'images/codes/codecover_compass.png' },
-    { title: 'Zangeki60s', description: '2024 研发中', img: 'images/codes/codecover_compass.png' },
-    { title: 'Ping', description: '2024.3', link: 'https://new-link.com/ping', linkLabel: 'Ping Project', img: 'images/codes/codecover_compass.png', imgLink: 'https://example.com/ping' },
-    { title: 'FrogVillage', description: '已推出 (合作开发)', link: 'https://new-link.com/frogvillage', linkLabel: 'Frog Village', img: 'images/codes/codecover_compass.png' },
-    { title: 'VillageTD', description: '已推出 (协助开发)', link: 'https://new-link.com/villagetd', linkLabel: 'Village TD', img: 'images/codes/codecover_compass.png' },
-    { title: 'Narrow', description: '已推出', img: 'images/codes/codecover_compass.png' },
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const projectContainer = document.getElementById('projects');
+    const overlay = document.getElementById('overlay');
 
-const projectContainer = document.getElementById('projects');
-const overlay = document.getElementById('overlay');
+    const projectElements = document.querySelectorAll('.project');
 
-projects.forEach(project => {
-    const projectElement = document.createElement('div');
-    projectElement.classList.add('project');
+    projectElements.forEach(projectElement => {
+        const title = projectElement.getAttribute('data-title');
+        const description = projectElement.getAttribute('data-description');
+        const link = projectElement.getAttribute('data-link');
+        const linkLabel = projectElement.getAttribute('data-link-label');
+        const img = projectElement.getAttribute('data-img');
+        const imgLink = projectElement.getAttribute('data-img-link');
 
-    const imgLinkAttribute = project.imgLink ? `data-img-link="${project.imgLink}"` : '';
-    projectElement.innerHTML = `
-        <img src="${project.img}" alt="${project.title}" ${imgLinkAttribute}>
-        <h3><b>${project.title}</b></h3>
-        <p>${project.description}</p>
-        ${project.link ? `<a href="${project.link}" target="_blank">${project.linkLabel}</a>` : ''}
-    `;
+        const imgLinkAttribute = imgLink ? `data-img-link="${imgLink}"` : '';
+        projectElement.innerHTML = `
+            <img src="${img}" alt="${title}" ${imgLinkAttribute}>
+            <h3><b>${title}</b></h3>
+            <p>${description}</p>
+            ${link ? `<a href="${link}" target="_blank">${linkLabel}</a>` : ''}
+        `;
 
-    // 点击图片时的处理
-    projectElement.querySelector('img').addEventListener('click', () => {
-        const imgLink = projectElement.querySelector('img').getAttribute('data-img-link');
-        if (imgLink) {
-            window.location.href = imgLink;
-        } else {
-            projectElement.querySelector('img').classList.toggle('expanded');
-            overlay.classList.toggle('active');
-        }
+        // 点击图片时的处理
+        projectElement.querySelector('img').addEventListener('click', () => {
+            const imgLink = projectElement.querySelector('img').getAttribute('data-img-link');
+            if (imgLink) {
+                window.location.href = imgLink;
+            } else {
+                projectElement.querySelector('img').classList.toggle('expanded');
+                overlay.classList.toggle('active');
+            }
+        });
+
+        projectContainer.appendChild(projectElement);
     });
 
-    projectContainer.appendChild(projectElement);
-});
-
-overlay.addEventListener('click', () => {
-    const expandedImg = document.querySelector('img.expanded');
-    if (expandedImg) {
-        expandedImg.classList.remove('expanded');
-    }
-    overlay.classList.remove('active');
+    overlay.addEventListener('click', () => {
+        const expandedImg = document.querySelector('img.expanded');
+        if (expandedImg) {
+            expandedImg.classList.remove('expanded');
+        }
+        overlay.classList.remove('active');
+    });
 });
