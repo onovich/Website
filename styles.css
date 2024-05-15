@@ -36,7 +36,7 @@ body {
     box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
 }
 
-.sidebar h2 {
+.sidebar h2 {   
     font-family: var(--font-family);
     font-weight: 200; 
     font-size: 22px;
@@ -60,6 +60,7 @@ body {
     font-weight: 200; 
     font-size: 16px;
     color: var(--sidebar-color);
+    white-space: nowrap; /* 确保文字不折行 */
 }
 
 .sidebar a:hover {
@@ -158,11 +159,11 @@ body {
     }
 
     .sidebar {
-        padding: 20px 10px;
+        padding: 40px 40px;
         width: var(--sidebar-width); /* 使用动态宽度 */
     }
 
     .content {
-        padding: 20px;
+        padding: 40px;
     }
 }
