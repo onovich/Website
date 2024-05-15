@@ -154,6 +154,14 @@ body {
     text-decoration: underline;
 }
 
+.team-intro {
+    font-family: var(--font-family);
+    font-weight: 200; /* Regular */
+    font-size: 15px;
+    color: var(--font-color);
+    line-height: 1.2;
+}
+
 @media (max-width: 1024px) {
     .container {
         flex-direction: row; /* 始终保持并排布局 */
