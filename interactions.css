@@ -1,13 +1,21 @@
 /* interactions.css */
 img {
     transition: transform 0.3s ease;
+}
+
+img[data-link] {
     cursor: pointer;
+}
+
+img:not([data-link]) {
+    cursor: zoom-in;
 }
 
 img.expanded {
     transform: scale(2); /* 可以根据需要调整放大倍数 */
     position: relative;
     z-index: 10;
+    cursor: zoom-out;
 }
 
 #overlay {
