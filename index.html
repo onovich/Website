@@ -11,7 +11,8 @@
             background-color: #fff;
             color: #000;
             margin: 0;
-            padding: 0 131px;
+            padding: 0;
+            overflow-x: hidden; /* 防止水平滚动 */
         }
         .container {
             display: flex;
@@ -21,9 +22,10 @@
         .sidebar {
             width: 365px;
             background-color: #fff;
-            padding: 40px 20px;
+            padding: 40px 20px 0px 130px;
             box-shadow: 0px 0 0px rgba(0,0,0,0.1);
             color: #6C6C6C;
+            box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
         }
         .sidebar h2 {
             font-family: 'PingFang SC', sans-serif;
@@ -49,8 +51,9 @@
         }
         .content {
             flex: 1;
-            padding: 40px 20px;
-            margin-left: 50px;
+            padding: 80px 130px 130px 130px; /* 修改这里以调整右边距 */
+            box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
+            overflow-y: auto; /* 如果内容过多，允许垂直滚动 */
         }
         .content .title {
             display: flex;
@@ -75,25 +78,35 @@
         }
         .content .projects {
             display: grid;
-            grid-template-columns: repeat(3, 224px);
+            grid-template-columns: repeat(auto-fill, 224px); /* 使用 auto-fill 动态适应列数 */
             gap: 30px 36px;
+            justify-content: center; /* 使项目居中对齐 */
         }
         .project {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border: 1px solid #ddd;
+            padding: 0;
+            border: 0;
             text-align: center;
+            width: 224px;
+            box-sizing: border-box;
+        }
+        .project img {
+            width: 224px;
+            height: 126px;
+            object-fit: cover;
+            margin-bottom: 10px;
         }
         .project h3 {
             font-family: 'PingFang SC', sans-serif;
             font-weight: 700; /* Bold */
             font-size: 12px;
-            margin: 25px 0 5px 0;
+            text-align: left;
+            margin: 0 0 5px 0;
             color: #9F9F9F;
         }
         .project p {
             font-family: 'PingFang SC', sans-serif;
             font-weight: 300; /* Light */
+            text-align: left;
             margin: 0 0 5px 0;
             font-size: 12px;
             color: #9F9F9F;
@@ -101,6 +114,8 @@
         .project a {
             font-family: 'PingFang SC', sans-serif;
             font-weight: 400; /* Regular */
+            text-align: left;
+            display: block;
             font-size: 12px;
             color: #000;
             text-decoration: underline;
@@ -134,15 +149,15 @@
     </div>
     <script>
         const projects = [
-            { title: 'Ninja Ming', description: '开发中 (协助开发)', link: '#' },
-            { title: 'Oshi', description: '2024 研发中', link: '#' },
-            { title: 'Alter', description: '2024 研发中', link: '#' },
-            { title: 'Leap', description: '2024 研发中', link: '#' },
-            { title: 'Zangeki60s', description: '2024 研发中', link: '#' },
-            { title: 'Ping', description: '2024.3', link: '#' },
-            { title: 'FrogVillage', description: '已推出 (合作开发)', link: '#' },
-            { title: 'VillageTD', description: '已推出 (协助开发)', link: '#' },
-            { title: 'Narrow', description: '已推出', link: '#' },
+            { title: 'Ninja Ming', description: '开发中 (协助开发)', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Oshi', description: '2024 研发中', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Alter', description: '2024 研发中', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Leap', description: '2024 研发中', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Zangeki60s', description: '2024 研发中', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Ping', description: '2024.3', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'FrogVillage', description: '已推出 (合作开发)', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'VillageTD', description: '已推出 (协助开发)', link: '#', img: 'images/codes/codecover_compass.png' },
+            { title: 'Narrow', description: '已推出', link: '#', img: 'images/codes/codecover_compass.png' },
         ];
 
         const projectContainer = document.getElementById('projects');
@@ -152,6 +167,7 @@
             projectElement.classList.add('project');
 
             projectElement.innerHTML = `
+                <img src="${project.img}" alt="${project.title}">
                 <h3><b>${project.title}</b></h3>
                 <p>${project.description}</p>
                 <a href="${project.link}">Github</a>
