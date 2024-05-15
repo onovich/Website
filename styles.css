@@ -1,8 +1,8 @@
 /* styles.css */
 :root {
     --sidebar-width: clamp(200px, 20vw, 365px);
-    --sidebar-padding: clamp(20px, 5vw, 40px) clamp(12px, 2vw, 30px) clamp(0px, 0vw, 0px) clamp(60px, 6vw, 130px);
-    --content-padding: clamp(20px, 5vw, 60px) clamp(20px, 10vw, 130px) clamp(20px, 5vw, 30px) clamp(20px, 10vw, 200px);
+    --sidebar-padding: clamp(40px, 5vw, 40px) clamp(100px, 3vw, 220px) clamp(0px, 0vw, 0px) clamp(100px, 6vw, 150px);
+    --content-padding: clamp(40px, 5vw, 60px) clamp(20px, 10vw, 130px) clamp(20px, 5vw, 30px) clamp(20px, 10vw, 200px);
     --font-family: 'Noto Sans SC', sans-serif;
     --font-color: #000;
     --sidebar-bg: #fff;
