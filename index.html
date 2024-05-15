@@ -24,24 +24,26 @@
             background-color: #fff;
             padding: 40px 20px 0px 130px;
             box-shadow: 0px 0 0px rgba(0,0,0,0.1);
-            color: #6C6C6C;
+            color: #5F5F5F;
             box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
         }
         .sidebar h2 {
             font-family: 'PingFang SC', sans-serif;
-            font-weight: 300; /* Light */
-            font-size: 24px;
+            font-weight: 200; 
+            font-size: 22px;
             margin-bottom: 40px;
+            letter-spacing: 1px; /* 增加字距 */
             color: #000;
         }
         .sidebar a {
             display: block;
-            margin: 12px 0;
+            margin: 11.5px 0;
             text-decoration: none;
             font-family: 'PingFang SC', sans-serif;
-            font-weight: 100; /* UltraLight */
-            font-size: 18px;
-            color: #6C6C6C;
+            letter-spacing: 1px; /* 增加字距 */
+            font-weight: 200; 
+            font-size: 16px;
+            color: #5F5F5F;
         }
         .sidebar a:hover {
             color: #CACACA;
@@ -51,7 +53,7 @@
         }
         .content {
             flex: 1;
-            padding: 80px 130px 130px 130px; /* 修改这里以调整右边距 */
+            padding: 80px 30px 30px 30px; /* 修改这里以调整右边距 */
             box-sizing: border-box; /* 确保 padding 不会增加整体宽度 */
             overflow-y: auto; /* 如果内容过多，允许垂直滚动 */
         }
@@ -71,14 +73,14 @@
         }
         .content .title a {
             font-family: 'PingFang SC', sans-serif;
-            font-weight: 400; /* Regular */
+            font-weight: 200;
             font-size: 18px;
-            color: blue;
+            color: #5F5F5F;
             text-decoration: none;
         }
         .content .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 224px); /* 使用 auto-fill 动态适应列数 */
+            grid-template-columns: repeat(auto-fill, minmax(224px, 1fr)); /* 使用 auto-fill 和 minmax 动态适应列数 */
             gap: 30px 36px;
             justify-content: center; /* 使项目居中对齐 */
         }
@@ -86,12 +88,13 @@
             padding: 0;
             border: 0;
             text-align: center;
-            width: 224px;
+            width: 100%;
+            max-width: 224px; /* 设置最大宽度以确保自适应 */
             box-sizing: border-box;
         }
         .project img {
-            width: 224px;
-            height: 126px;
+            width: 100%;
+            height: auto;
             object-fit: cover;
             margin-bottom: 10px;
         }
@@ -120,6 +123,19 @@
             color: #000;
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                padding: 20px 10px;
+                width: 100%; /* Sidebar 占据整个屏幕宽度 */
+            }
+            .content {
+                padding: 20px;
+            }
+            .container {
+                flex-direction: column; /* 使 sidebar 和 content 垂直堆叠 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -140,7 +156,7 @@
         <div class="content">
             <div class="title">
                 <h1></h1>
-                <a href="#">HOME</a>
+                <a href="#">< HOME</a>
             </div>
             <div class="projects" id="projects">
                 <!-- Projects will be dynamically inserted here -->
