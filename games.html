@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onovich</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="interactions.css">
+</head>
+<body>
+    <div class="container">
+        <div id="sidebar-placeholder"></div> <!-- 占位符 -->
+        <div class="content">
+            <div class="title">
+                <h1></h1>
+                <a href="#">< HOME</a>
+            </div>
+            <div class="projects" id="projects">
+                <!-- Projects will be inserted here -->
+                <div class="project" data-title="Ninja Ming" data-description="开发中 (协助开发)" data-link="https://github.com/onovich/Swing" data-link-label="Github" data-img="images/codes/codecover_compass.png" data-img-link="https://example.com/ninja"></div>
+                <div class="project" data-title="Oshi" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Alter" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Leap" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Zangeki60s" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Ping" data-description="2024.3" data-link="https://new-link.com/ping" data-link-label="Ping Project" data-img="images/codes/codecover_compass.png" data-img-link="https://example.com/ping"></div>
+                <div class="project" data-title="FrogVillage" data-description="已推出 (合作开发)" data-link="https://new-link.com/frogvillage" data-link-label="Frog Village" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="VillageTD" data-description="已推出 (协助开发)" data-link="https://new-link.com/villagetd" data-link-label="Village TD" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Narrow" data-description="已推出" data-img="images/codes/codecover_compass.png"></div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div> <!-- 蒙层 -->
+    <script src="scripts.js"></script> <!-- 引用外部JavaScript文件 -->
+    <script src="sidebar.js"></script> <!-- 引用动态加载sidebar内容的JavaScript文件 -->
+</body>
+</html>
