@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onovich</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="interactions.css">
 </head>
+
 <body>
     <div class="container">
         <div id="sidebar-placeholder"></div> <!-- 占位符 -->
         <div class="content">
             <div class="title">
                 <h1></h1>
-                <a href="#">< HOME</a>
+                <a href="#">
+                    < HOME</a>
             </div>
             <div class="projects" id="projects">
                 <!-- Projects will be inserted here -->
-                <div class="project" data-title="Ninja Ming" data-description="开发中 (协助开发)" data-link="https://github.com/onovich/Swing" data-link-label="Github" data-img="images/codes/codecover_compass.png" data-img-link="https://example.com/ninja"></div>
-                <div class="project" data-title="Oshi" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="Alter" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="Leap" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="Zangeki60s" data-description="2024 研发中" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="Ping" data-description="2024.3" data-link="https://new-link.com/ping" data-link-label="Ping Project" data-img="images/codes/codecover_compass.png" data-img-link="https://example.com/ping"></div>
-                <div class="project" data-title="FrogVillage" data-description="已推出 (合作开发)" data-link="https://new-link.com/frogvillage" data-link-label="Frog Village" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="VillageTD" data-description="已推出 (协助开发)" data-link="https://new-link.com/villagetd" data-link-label="Village TD" data-img="images/codes/codecover_compass.png"></div>
-                <div class="project" data-title="Narrow" data-description="已推出" data-img="images/codes/codecover_compass.png"></div>
+                <div class="project" data-title="Air" data-description="2024 研发中"
+                    data-link="https://github.com/onovich/Air" data-link-label="Github"
+                    data-img="images/games/game_air.png"></div>
+                <div class="project" data-title="Ninja Ming" data-description="1Poss 工作室 2021-2024 研发中<br/>(协助开发)"
+                    data-img="images/games/game_ninjaming.png"></div>
+                <div class="project" data-title="Oshi" data-description="2024 研发中"
+                    data-link="https://github.com/onovich/Oshi" data-link-label="Github"
+                    data-img="images/games/game_oshi.png"></div>
+                <div class="project" data-title="Alter" data-description="2024 研发中"
+                    data-link="https://github.com/onovich/Alter" data-link-label="Github"
+                    data-img="images/games/game_alter.png"></div>
+                <div class="project" data-title="Leap" data-description="2024 研发中"
+                    data-link="https://github.com/onovich/Leap" data-link-label="Github"
+                    data-img="images/games/game_leap.png"></div>
+                <div class="project" data-title="Zangeki60s'" data-description="2024 研发中"
+                    data-img="images/games/game_zangeki60s.png"></div>
+                <div class="project" data-title="Ping" data-description="2024.3"
+                    data-link="https://github.com/onovich/Ping_Server" data-link-label="Github"
+                    data-img="images/games/game_ping.png"></div>
+                <div class="project" data-title="FrogVillage" data-description="1Poss 工作室 2024.1 - 2024.2 已搁置<br/>(合作开发)"
+                    data-img="images/games/game_frogvillage.png"></div>
+                <div class="project" data-title="VillageTD" data-description="1Poss 工作室 2023.10 - 2024.3 已搁置<br/>(协助开发)"
+                    data-img="images/games/game_villagetd.png"></div>
+                <div class="project" data-title="Narrow" data-description="已搁置"
+                    data-img="images/games/game_narrow.png"></div>
+                <div class="project" data-title="Silence" data-description="2021.9-2021.10 已搁置"
+                    data-img="images/games/game_silence.png"></div>
+                <div class="project" data-title="Flow" data-description="2021.6 GMTK JAM 2021"
+                    data-link="https://onovich.itch.io/flow" data-link-label="Itch.io"
+                    data-img="images/games/game_flow.png"></div>
+                <div class="project" data-title="Alien Stalker" data-description="2021.4-2021.9 已搁置"
+                    data-img="images/games/game_alienstalker.png"></div>
+                <div class="project" data-title="林中路" data-description="2019 已搁置"
+                    data-img="images/games/game_woodroad.png"></div>
+                <div class="project" data-title="镜虎与六面禅" data-description="2019 已搁置"
+                    data-img="images/games/game_dicetiger.png"></div>
+                <div class="project" data-title="无心俱乐部" data-description="CigaGameJam2019.7 已搁置"
+                    data-img="images/games/game_noheartclub.png"></div>
             </div>
         </div>
     </div>
@@ -34,4 +67,5 @@
     <script src="scripts.js"></script> <!-- 引用外部JavaScript文件 -->
     <script src="sidebar.js"></script> <!-- 引用动态加载sidebar内容的JavaScript文件 -->
 </body>
+
 </html>
